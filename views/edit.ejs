@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(184, 236, 236);
+        }
+        div{
+            display: flex;
+            height: 300px;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+            border: 1px solid black;
+            border-radius: 3rem;
+            box-shadow: 20px 10px 30px pink;
+            padding:4rem 3rem;
+        }
+        input{
+            height: 30px;
+            border-radius: 3rem;
+            font-weight: 900;
+        }
+        .desc{
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+            <form action="/update" method="post">
+                <input type="text" name="name" id="" value="<%=filename.split(".")[0]%>" readonly>
+                <input type="text" name="description" value=" <%=description%>" class="desc">
+                <input type="submit" value="update" style="cursor:pointer">
+            </form>
+    </div>
+</body>
+</html>

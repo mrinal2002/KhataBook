@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{
+            color: blue;
+        }
+        h1{
+            color: rgb(16, 211, 146);
+            font-weight: 1000;
+        }
+        .outerbox{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4rem;
+            border: 1px solid black;
+            box-shadow: 10px 20px 40px;
+        }
+        .extra{
+            margin-top: 10rem;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="outerbox">
+        <div>
+            <h2>Your task Name : </h2>
+            <h1>
+                <%=filename.split(".")[0]%>
+            </h1>
+        </div>
+        <div>
+            <h2>You have to do : </h2>
+            <h1>
+                <%=description%>
+            </h1>
+        </div>
+    </div>
+    <div class="extra">
+        <div>
+            <a href="/" style="font-size: xx-large;">Home</a>
+        </div>
+        <div>
+            <a href="/edit/<%=filename%>" style="font-size: xx-large;">Edit</a>
+        </div>
+    </div>
+</body>
+</html>

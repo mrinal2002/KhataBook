@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Gilroy";
+        }
+        body{
+            background-color: rgb(227, 239, 250);
+        }
+        .header{
+            display: flex;
+            justify-content: space-around;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+        .inside-header{
+            display: flex;
+            gap: 1rem;
+        }
+        a{
+            text-decoration: none;
+        }
+        .logo{
+            font-weight: 800;
+            /* border: 1px dashed black; */
+            box-shadow: 10px 10px 8px #888888;
+            border-radius: 10px;
+        }
+        .tasks{
+            border: 1px solid black;
+            width: 40%;
+            display: flex;
+            justify-content: space-around;
+            height: 40px;
+            align-items: center;
+            box-shadow: 10px 10px 8px #888888;
+            border-radius: 2rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div>
+            <h1 class="logo">My Khata Book</h1>
+        </div>
+        <div class="inside-header">
+            <button style="margin-right: 5rem;">
+
+                <h1>
+                 <a href="/">Home</a>
+                </h1> 
+            </button>
+            <button>
+                <h1>
+                    <a href="/create">Create new hissab</a>
+                </h1>
+            </button>
+        </div>
+    </div>
+    <% if(filename.length==0){%>
+        <h4>Please create your khata book task to see your tasks..</h4>
+    <%}%>
+        <% filename.forEach((data)=>{ %>
+            <div class="tasks">
+                    <div>
+                        <h3> <%=data.split(".")[0]%> </h3>
+                    </div>
+                    <div>
+                        <a href="/show/<%=data%>">
+                            Show
+                        </a>
+                    </div>
+                    <div>
+                        <a href="/edit/<%=data%>">Edit</a>
+                    </div>
+                    <div>
+                        <a href="/delete/<%=data%>">Delete</a>
+                    </div>
+                </div>
+                <% }) %>
+    
+</body>
+</html>
